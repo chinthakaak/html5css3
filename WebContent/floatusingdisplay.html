@@ -37,15 +37,24 @@ div {
 	/* float:right */;
 	
 }
+/* Remove word spacing to get the same view as float to avoid additional spacing between
+http://stackoverflow.com/questions/1833734/display-inline-block-extra-margin
+*/
+#container {
+	word-spacing: -4px;
+}
 
 </style>
 </head>
 <body>
 	<section>
-		<div id="box1">adddddddddddddddddddddddddddddddddd</div>
-		<div id="box2">b</div>
-		<div id="box3">c</div>
-		<div id="box4">dddddddddddddddddd</div>	
+		<div id="container">
+				<div id="box1">xx</div>
+				<div id="box2">b</div>
+				<div id="box3">c</div>
+				<div id="box4">dddddddddddddddddd</div>	
+		</div>
+		
 		<div id="box5">
 			<p> 
 28
