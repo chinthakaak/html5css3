@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<style>
+/* #box1,#box2,#box3,#box4 {
+	display: inline;
+} */
+div {
+	display: inline-block;
+}
+#box1 {
+	width:100px;
+	height:100px;
+	background-color: red;
+	margin-left:10px;
+}
+#box2 {
+	width:100px;
+	height:100px;
+	background-color: green;
+}
+#box3 {
+	width:100px;
+	height:100px;
+	background-color: blue;
+	margin-left: 20px;	
+	
+	/* float:right */;
+}
+#box4 {
+	width:100px;
+	height:100px;
+	background-color: magenta;
+		
+	/* float:right */;
+	
+}
+
+</style>
+</head>
+<body>
+	<section>
+		<div id="box1">adddddddddddddddddddddddddddddddddd</div>
+		<div id="box2">b</div>
+		<div id="box3">c</div>
+		<div id="box4">dddddddddddddddddd</div>	
+		<div id="box5">
+			<p> 
+28
+down vote
+Having read this question and the answers a couple of times, all I can do is assume that there's been quite a bit of editing going on, and my suspicion is that you've been given the incorrect answer based on not providing enough information. My clue comes from the use of br tag.
+
+Apologies to Darryl. I read class="inline" as style="display: inline". You have the right answer, even if you do use semantically questionable class names ;-)
+
+The miss use of br to provide structural layout rather than for textual layout is far too prevalent for my liking.
+
+If you're wanting to put more than inline elements inside those divs then you should be floating those divs rather than making them inline.
+
+Floated divs:
+			</p>
+		</div>	
+	</section>
+</body>
+</html>
