@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<header><h3>Geolocations</h3></header>
+	<section>
+		<div id="message">
+			
+		</div>
+		<div id="googleMap" style="width: 400px; height: 300px;  border:1px solid">
+		</div>
+	</section>
+	<script type="text/javascript">
+		if(window.navigator.geolocation) {
+			$("#message").html("Locating..");
+			var geolocation = window.navigator.geolocation;
+			var options = {
+					enableHighAccutracy:true,
+					maximumAge:1000,
+					timeout:10000
+			}
+			geolocation.getCurrentPosition(onComplete, onFail, options);			
+		}
+		
+		function onComplete(positionObject) {
+			$("#message").html("Position Retrieved");
+			$("#message").append("<p> Latitude: "+positionObject.coords.latitude+"</p>");
+			$("#message").append("<p> Longitude: "+positionObject.coords.longitude+"</p>");
+			$("#message").append("<p> Altitude: "+positionObject.coords.altitude+"</p>");
+			$("#message").append("<p> Course:"+positionObject.coords.course+"</p>");
+			$("#message").append("<p> Speed:"+positionObject.coords.speed+"</p>");
+			$("#message").append("<p> Accuracy:"+positionObject.coords.accuracy+"</p>");
+			
+			initMap(positionObject.coords.latitude, positionObject.coords.longitude)
+		}
+		
+		function onFail(errorObject) {
+			$("#message").html("Position not received"+" <p>"+errorObject.message);
+		}
+		
+		function initMap(latitude, longitude) {
+			var latlng = new google.map.LatLng(latitude, longitude);
+		}
+	</script>
+</body>
+</html>
