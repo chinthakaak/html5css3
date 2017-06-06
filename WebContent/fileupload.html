@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+</head>
+<body>
+	<input id="file" type="file">
+	<input type="button" onclick="read()" value="Read">
+	<script type="text/javascript">
+		function read() {
+			var r = $("#file").val();
+			reader = new FileReader(r);
+			
+			console.log(reader.result);
+		}
+	</script>
+</body>
+</html>

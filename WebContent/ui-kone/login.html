@@ -4,6 +4,8 @@
 <meta charset="ISO-8859-1">
 <title>KONE Login UI</title>
 <link rel="stylesheet" href="../fonts/Proclamate-fontfacekit/web fonts/proclamateheavy_heavy_macroman/stylesheet.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
 <style>
 #persistent_logo{
 	border: 2px solid rgb(21, 97, 145);
@@ -13,12 +15,57 @@
 }
 
 #login_form{
-	border: 2px solid;
-	margin: 15px;
+	border: 1px solid;
+	border-radius: 10px;
+	box-shadow: 1px 2px 1px 3px rgb(21, 97, 145);
+	margin: auto;
+	width:300px;
+	height: 150px;
+	padding: 20px;
+	display: block;
 }
+#div_login {
+	position:relative;
+	width: 300px;
+	height: 200px;
+	margin: auto;
+	border: 1px solid;
+	border-radius:10px;
+	box-shadow: 1px 1px 2px rgb(21, 97, 145);
+}
+
+#div_username {
+	position: absolute;
+	top: 46px;
+	left: 20px;
+}
+
+#div_password {
+	position: absolute;
+	top:101px;
+	left:20px;
+}
+
+#div_login_btn {
+	position: absolute;
+	bottom:23px;
+	right:29px;
+}
+
+#password {
+	position: relative;b
+	left: 11px;
+}
+
 body {
-	font-family: proclamate_heavyheavy;
+	font-family: Times New Roman proclamate_heavyheavy;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size:100%;
+	background-image: url("images/elevator_back.jpg");	
+
 }
+
 </style>
 </head>
 <body>
@@ -26,14 +73,29 @@ body {
 		<p align="center"><img id="persistent_logo" src="images/psl_logo_web.png"></p>	
 	</header>
 	<section>
-		<form id="login_form">
-			Samples
-		</form>
-		<form id="login_form">
-			Samples
-		</form>
+		<div id="div_login">
+			<form>
+				<div id="div_username">
+					<label id="lbl_username" for="username">User Name:</label>
+					<input id="username" type="text" placeholder="User Name">
+				</div>
+
+				<div id="div_password">
+					<label id="lbl_password" for="password">Password:</label>					
+					<input id="password" type="password" placeholder="Password">
+				</div>
+				<div id="div_login_btn">
+					<input id="btn_login" type="button" value="Login">
+				</div>
+			</form>			
+		</div>		
 	</section>
 	<footer>
 	</footer>
+	<script type="text/javascript">
+		$("#btn_login").bind('click', function() {
+			window.location.href = "Home.html";
+		});
+	</script>
 </body>
 </html>

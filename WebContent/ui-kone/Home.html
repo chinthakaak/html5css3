@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<style>
+
+body {
+		
+}
+</style>
+</head>
+
+<body>
+	<header>
+		<h1>Web Designs</h1>
+	</header>
+	<section>
+			<label for="selection">Select Color: </label>
+			<select id="selection">
+				<option value=""></option>
+				<option value="red">Red</option>
+				<option value="green">Green</option>
+				<option value="blue">Blue</option>
+			</select>
+	</section>
+	<script type="text/javascript">
+		$(function(){
+			if(window.localStorage) {
+				var bgcolor = localStorage.getItem("bgcolor");
+				if(bgcolor) {
+					$("body").css("background-color", bgcolor);
+				}
+			}
+		});
+		
+		$("#selection").bind('change',function() {
+			$("body").css("background-color", this.value);
+			localStorage.setItem("bgcolor", this.value)
+		});
+	</script>
+</body>
+</html>
